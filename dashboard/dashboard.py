@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-df = pd.read_csv("all_data.csv")
+df = pd.read_csv("dashboard/all_data.csv")
 df['dteday'] = pd.to_datetime(df['dteday'])
 
 season_labels = {1: 'Spring', 2: 'Summer', 3: 'Fall', 4: 'Winter'}
@@ -15,7 +15,7 @@ dominant_color, secondary_color = '#0b3d91', '#62a8e5'
 min_date, max_date = df["dteday"].min(), df["dteday"].max()
 
 with st.sidebar:
-    st.image("bike logo.png")
+    st.image("dashboard/bike logo.png")
 
     start_date, end_date = st.date_input("Pilih Rentang Tanggal", [min_date, max_date], min_value=min_date, max_value=max_date)
 
